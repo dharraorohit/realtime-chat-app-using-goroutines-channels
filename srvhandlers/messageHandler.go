@@ -3,8 +3,8 @@ package srvhandlers
 import (
 	"net/http"
 
-	"github.com/dharraorohit/scalable-chat-app/utils/responseUtils"
-	"github.com/dharraorohit/scalable-chat-app/utils/routerUtils"
+	"github.com/dharraorohit/realtime-chat-app-using-goroutines-channels/utils/responseUtils"
+	"github.com/dharraorohit/realtime-chat-app-using-goroutines-channels/utils/routerUtils"
 )
 
 type MessageHandler struct {

@@ -3,7 +3,7 @@ package srvhandlers
 import (
 	"net/http"
 
-	"github.com/dharraorohit/scalable-chat-app/utils/responseUtils"
+	"github.com/dharraorohit/realtime-chat-app-using-goroutines-channels/utils/responseUtils"
 )
 
 type BaseHandler struct{}

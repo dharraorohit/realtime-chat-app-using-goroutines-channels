@@ -6,15 +6,18 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/dharraorohit/scalable-chat-app/srvhandlers"
+	"github.com/dharraorohit/realtime-chat-app-using-goroutines-channels/srvhandlers"
 	"github.com/gorilla/mux"
 )
 
 func getRouter() *mux.Router {
-	messageHandler := &srvhandlers.MessageHandler{}
+	webSocketHandler := srvhandlers.WebSocketHandler{
+		Clients: make(map[int]*srvhandlers.Client),
+	}
 
 	r := mux.NewRouter()
-	r.Handle("/", messageHandler)
+	r.HandleFunc("/ws", webSocketHandler.HandleConnection)
+
 	return r
 }
 

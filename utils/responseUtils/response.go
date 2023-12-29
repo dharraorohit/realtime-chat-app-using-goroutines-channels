@@ -40,3 +40,12 @@ func (s *StandardResponse) RenderResponse(w http.ResponseWriter) {
 	w.WriteHeader(s.Code)
 	w.Write(indentedResponse)
 }
+
+func ErrorResponse(code int, errorMessage string, w http.ResponseWriter) {
+	resp := StandardResponse{
+		Code:         code,
+		Message:      errorMessage,
+		ResponseData: nil,
+	}
+	resp.RenderResponse(w)
+}
